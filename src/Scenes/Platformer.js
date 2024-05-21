@@ -15,7 +15,7 @@ class Platformer extends Phaser.Scene {
         this.physics.world.gravity.y = 1500;
         this.JUMP_VELOCITY = -500;
         this.PARTICLE_VELOCITY = 50;
-        this.SCALE = 2.0;
+        this.SCALE = 1.5;
     }
 
     preload() {
@@ -236,8 +236,8 @@ class Platformer extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, 100*18 , 20*18);
 
         this.cameras.main.startFollow(my.sprite.player, true, 0.2, 0.2); // (target, [,roundPixels][,lerpX][,lerpY])
-        this.cameras.main.setDeadzone(200, 400);
-        this.cameras.main.setZoom(this.SCALE);
+        this.cameras.main.setDeadzone(400, 200);
+        this.cameras.main.setZoom(2);
         
         this.add.text(15, 370, "Coins: ", {
             fontFamily: "Arial",
